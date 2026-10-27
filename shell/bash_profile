@@ -1,0 +1,7 @@
+# Login environment, then interactive settings. Machine-specific settings stay local.
+if [[ -r "$HOME/.config/personal-shell/env.bash" ]]; then
+    source "$HOME/.config/personal-shell/env.bash"
+fi
+[[ -r "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
+[[ -r "$HOME/.bash_profile.local" ]] && source "$HOME/.bash_profile.local"
+:

@@ -1,0 +1,55 @@
+{
+  "formulae": [
+    "bash",
+    "bash-completion@2",
+    "git",
+    "jq",
+    "go",
+    "gopls",
+    "awscli",
+    "hashicorp/tap/terraform",
+    "terragrunt",
+    "kubernetes-cli",
+    "helm@3",
+    "helmfile",
+    "k9s",
+    "fzf",
+    "kustomize",
+    "kubeconform",
+    "kops",
+    "cilium-cli",
+    "hubble",
+    "sops",
+    "gitleaks",
+    "aws-iam-authenticator",
+    "docker",
+    "docker-compose",
+    "docker-credential-helper-ecr"
+  ],
+  "casks": [
+    "visual-studio-code"
+  ],
+  "rust_components": [
+    "clippy",
+    "rustfmt",
+    "rust-analyzer"
+  ],
+  "vscode_extensions": [
+    "be5invis.toml",
+    "cweijan.dbclient-jdbc",
+    "docker.docker",
+    "gerane.theme-flatlandmonokai",
+    "golang.go",
+    "hashicorp.terraform",
+    "ms-azuretools.vscode-containers",
+    "ms-azuretools.vscode-docker",
+    "ms-kubernetes-tools.vscode-kubernetes-tools",
+    "ms-python.debugpy",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-python.vscode-python-envs",
+    "pkief.material-icon-theme",
+    "redhat.vscode-yaml",
+    "rust-lang.rust-analyzer"
+  ]
+}

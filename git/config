@@ -1,0 +1,7 @@
+# Identity and work-specific configuration belong in ~/.gitconfig.local.
+[color]
+    ui = auto
+[core]
+    excludesFile = ~/.config/personal-git/ignore
+[include]
+    path = ~/.gitconfig.local

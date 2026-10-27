@@ -1,0 +1,45 @@
+# Keep non-interactive shells (including scp) quiet.
+case $- in *i*) ;; *) return ;; esac
+
+_personal_shell_config="$HOME/.config/personal-shell"
+[[ -r "$_personal_shell_config/env.bash" ]] && source "$_personal_shell_config/env.bash"
+
+# Prefer Bash 5 without changing the account's login shell or the SHELL variable.
+# Explicit commands such as bash -ic 'command' must run in the requested shell.
+if (( BASH_VERSINFO[0] < 5 )) && [[ -z ${BASH_EXECUTION_STRING-} ]]; then
+    for _personal_bash in \
+        "${_personal_brew_prefix:+$_personal_brew_prefix/bin/bash}" \
+        "$(type -P bash)" /usr/local/bin/bash /usr/bin/bash /bin/bash; do
+        [[ -n $_personal_bash && -x $_personal_bash ]] || continue
+        if BASH_ENV= "$_personal_bash" --noprofile --norc -c '(( BASH_VERSINFO[0] >= 5 ))'; then
+            if shopt -q login_shell; then
+                exec "$_personal_bash" -il
+            else
+                exec "$_personal_bash" -i
+            fi
+        fi
+    done
+fi
+unset _personal_bash
+
+umask 022
+export HISTCONTROL=ignoredups
+shopt -s histappend checkwinsize
+
+case $(uname -s) in
+    Darwin) export LSCOLORS=ExGxBxFxCxDxDxabagacad; alias ls='ls -G' ;;
+    Linux) alias ls='ls --color=auto' ;;
+esac
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+alias g='grep -i'
+alias f='find . -iname'
+
+[[ -r "$_personal_shell_config/completions.bash" ]] && source "$_personal_shell_config/completions.bash"
+[[ -r "$_personal_shell_config/prompt.bash" ]] && source "$_personal_shell_config/prompt.bash"
+unset _personal_shell_config
+
+# Private aliases, work integrations and overrides belong here, outside the repo.
+[[ -r "$HOME/.bashrc.local" ]] && source "$HOME/.bashrc.local"
+:

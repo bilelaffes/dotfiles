@@ -1,0 +1,8 @@
+# Copy to ~/.gitconfig.local, outside this repository, then fill in your identity.
+[user]
+    name = Your Name
+    email = you@example.com
+
+# If needed, use includeIf to choose an identity per project directory.
+# [includeIf "gitdir:~/work/"]
+#     path = ~/.gitconfig.work

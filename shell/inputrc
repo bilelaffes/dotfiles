@@ -1,0 +1,5 @@
+# Also used by other Readline applications. Keep distribution defaults first.
+$include /etc/inputrc
+set completion-ignore-case on
+set bell-style none
+set show-all-if-ambiguous on

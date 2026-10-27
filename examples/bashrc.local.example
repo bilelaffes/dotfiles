@@ -1,0 +1,5 @@
+# Copy to ~/.bashrc.local, outside this repository.
+# Optional organization-specific aliases and integrations belong here.
+# Keep passwords/tokens in your credential manager, not in this file.
+# Example:
+# [ -r "$HOME/.config/work/shell.bash" ] && source "$HOME/.config/work/shell.bash"

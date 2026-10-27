@@ -1,0 +1,22 @@
+{
+  "terminal.integrated.profiles.osx": {
+    "Bash": {
+      "path": "/bin/bash",
+      "args": [
+        "-l"
+      ]
+    }
+  },
+  "terminal.integrated.profiles.linux": {
+    "Bash": {
+      "path": "/bin/bash",
+      "args": [
+        "-l"
+      ]
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "Bash",
+  "terminal.integrated.defaultProfile.linux": "Bash",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Flatland Monokai"
+}
